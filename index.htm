@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto Russia</title>
+</head>
+
+<body class="page">
+    <section class="popup popup_opened">
+        <div class="popup__content">
+            <button class="popup__close"><img class="popup__close-image" src="./images/close.svg" alt=""></button>
+            <form class="popup__container">
+                <h2 class="popup__heading">Редактировать профиль</h2>
+                <fieldset class="popup__input">
+                    <input class="popup__input-name" type="text" placeholder="Жак-Ив Кусто">
+                    <input class="popup__input-profession" type="text" placeholder="Исследователь океана">
+                </fieldset>
+                <fieldset class="popup__handlers">
+                    <button class="popup__button" type="submit">Сохранить</button>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <header class="header">
+        <div class="header__logo"></div>
+    </header>
+    <main class="content">
+        <section class="profile">
+            <img class="profile__avatar" src="./images/avatar.jpg" alt="">
+            <div class="profile__info">
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button class="profile__edit-button"><img src="./images/pencil.svg" alt=""></button>
+            </div>
+            <p class="profile__profession">Исследователь океана</p>
+            <button class="profile__add-button"><img src="./images/plus.svg" alt=""></button>
+        </section>
+        <section class="places">
+            <article class="place">
+                <img class="place__image" src="./images/karachayevsk.jpeg" alt="">
+                <div class="place__info">
+                    <h2 class="place__title">Карачаевск</h2>
+                    <button class="place__like-button"> <img src="./images/like.svg" alt=""></button>
+                </div>
+            </article>
+            <article class="place">
+                <img class="place__image" src="./images/dombay.jpeg" alt="">
+                <div class="place__info">
+                    <h2 class="place__title">Домбай</h2>
+                    <button class="place__like-button"> <img src="./images/like.svg" alt=""></button>
+                </div>
+            </article>
+            <article class="place">
+                <img class="place__image" src="./images/mount_elbrus.jpeg" alt="">
+                <div class="place__info">
+                    <h2 class="place__title">Гора Эльбрус</h2>
+                    <button class="place__like-button"> <img src="./images/like.svg" alt=""></button>
+                </div>
+            </article>
+            <article class="place">
+                <img class="place__image" src="./images/lake_baykal.jpeg" alt="">
+                <div class="place__info">
+                    <h2 class="place__title">озеро Байкал</h2>
+                    <button class="place__like-button"> <img src="./images/like.svg" alt=""></button>
+                </div>
+            </article>
+            <article class="place">
+                <img class="place__image" src="./images/kazanskiy_kreml.jpeg" alt="">
+                <div class="place__info">
+                    <h2 class="place__title">Казанский Кремль</h2>
+                    <button class="place__like-button"> <img src="./images/like.svg" alt=""></button>
+                </div>
+            </article>
+            <article class="place">
+                <img class="place__image" src="./images/dagestan.jpeg" alt="">
+                <div class="place__info">
+                    <h2 class="place__title">Дагестан</h2>
+                    <button class="place__like-button"> <img src="./images/like.svg" alt=""></button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__info">&copy; 2022 Mesto Russia</p>
+    </footer>
+
+</body>
+
+</html>

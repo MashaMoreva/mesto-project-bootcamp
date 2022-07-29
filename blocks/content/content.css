@@ -1,0 +1,10 @@
+.content {
+    padding: 39px 19px 48px 19px;
+}
+  
+@media screen and (min-width: 920px) {
+    .content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+  }

@@ -1,0 +1,7 @@
+.place {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow: hidden;
+    border-radius: 10px 10px;
+}

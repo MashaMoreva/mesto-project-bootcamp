@@ -1,0 +1,21 @@
+.popup__close {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    transition: .7s ease;
+}
+
+.popup__close:hover {
+    cursor: pointer;
+    opacity: .6;
+  }
+
+@media screen and (min-width: 920px) {
+    .popup__close {
+        width: 32px;
+        height: 32px;
+    }
+}
