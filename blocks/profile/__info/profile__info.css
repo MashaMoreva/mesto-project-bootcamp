@@ -1,5 +1,17 @@
 .profile__info {
-    display: flex;
+    display: grid;
+    row-gap: 15px;
+    grid-template-areas:
+        "prifile__name profile__edit-button"
+        "profile__profession profile__profession";
     align-items: center;
-    margin: 22px auto 14px auto;
+    margin: 22px auto 36px auto;
+    max-width: 282px;
+}
+
+@media screen and (min-width: 920px) {
+    .profile__info {
+        margin: 0 auto 0 30px;
+        max-width: 336px;
+    }
 }

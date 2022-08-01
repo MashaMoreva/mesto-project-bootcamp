@@ -1,5 +1,5 @@
 .popup__content {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    position: relative;
 }

@@ -1,15 +1,15 @@
 .popup__button {
-    border: none;
     padding: 0;
+    width: 238px;
+    height: 46px;
+    border: none;
+    border-radius: 2px;
     background: black;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
     color: #FFFFFF;
-    border-radius: 2px;
-    width: 238px;
-    height: 46px;
+    text-align: center;
     transition: .7s ease;
 }
 
@@ -22,5 +22,7 @@
     .popup__button {
         width: 358px;
         height: 50px;
+        font-size: 18px;
+        line-height: 22px;
     }
 }

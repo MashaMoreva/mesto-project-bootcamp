@@ -4,9 +4,8 @@
     align-items: center;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 920px) {
     .profile {
        flex-direction: row;
-       justify-content: space-between;
     }
   }

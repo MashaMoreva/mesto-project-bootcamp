@@ -1,5 +1,6 @@
 .place__title {
     margin: 0;
+    max-width: calc(100% - 22px);
     font-weight: 900;
     font-size: 24px;
     line-height: 29px;

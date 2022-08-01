@@ -1,6 +1,5 @@
 .popup__container {
     box-sizing: border-box;
-    margin-top: 16px;
     overflow: hidden;
     border-radius: 10px;
     background: white;
@@ -11,7 +10,5 @@
     .popup__container {
         width: 430px;
         padding: 35px 35px;
-        margin-top: 8px;
-        margin-right: 40px;
     }
   }
