@@ -1,4 +1,4 @@
-.popup__input-profession {
+.popup__input-item {
     border: none;
     padding: 0 0 13px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
@@ -8,6 +8,6 @@
     color: #000000;
 }
 
-.popup__input-profession:focus {
+.popup__input-item:focus {
     outline-color: gray ;
 }
