@@ -52,14 +52,19 @@ function addPlace(name, link) {
     placeElement.querySelector('.place__delete-button').addEventListener('click', function (evt) {
         (evt.target.closest('.place')).remove();
     });
+    placeElement.querySelector('.place__image').addEventListener('click', function (evt) {
+        popupPlace.querySelector('img').src = evt.target.src;
+        popupPlace.querySelector('.popup__place-title').textContent = evt.target.alt;
+        openPopup(popupPlace);
+    });
+
     return placeElement;
+
 };
 
 initialCards.forEach(function (card) {
     places.insertAdjacentElement('beforeend', addPlace(card.name, card.link))
 });
-
-const images = document.querySelectorAll('.place__image');
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
@@ -76,14 +81,6 @@ function openPopup(popup) {
     placeLinkInput.value = '';
     popup.classList.add('popup_opened');
 };
-
-images.forEach(function (image) {
-    image.addEventListener('click', function (evt) {
-        popupPlace.querySelector('img').src = evt.target.src;
-        popupPlace.querySelector('.popup__place-title').textContent = evt.target.alt;
-        openPopup(popupPlace);
-    });
-});
 
 function formProfileSubmit(evt) {
     evt.preventDefault();
