@@ -13,5 +13,6 @@
     .profile__info {
         margin: 0 auto 0 30px;
         max-width: 336px;
+        align-items: flex-end;
     }
 }

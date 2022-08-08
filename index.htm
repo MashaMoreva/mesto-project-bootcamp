@@ -23,70 +23,63 @@
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
-        <section class="places">
-            <article class="place">
-                <img class="place__image" src="./images/karachayevsk.jpeg" alt="Карачаевск">
-                <div class="place__info">
-                    <h2 class="place__title">Карачаевск</h2>
-                    <button class="place__like-button" type="button"></button>
-                </div>
-            </article>
-            <article class="place">
-                <img class="place__image" src="./images/dombay.jpeg" alt="Домбай">
-                <div class="place__info">
-                    <h2 class="place__title">Домбай</h2>
-                    <button class="place__like-button" type="button"></button>
-                </div>
-            </article>
-            <article class="place">
-                <img class="place__image" src="./images/mount_elbrus.jpeg" alt="гора Эльбрус">
-                <div class="place__info">
-                    <h2 class="place__title">Гора Эльбрус</h2>
-                    <button class="place__like-button" type="button"></button>
-                </div>
-            </article>
-            <article class="place">
-                <img class="place__image" src="./images/lake_baykal.jpeg" alt="озеро Байкал">
-                <div class="place__info">
-                    <h2 class="place__title">озеро Байкал</h2>
-                    <button class="place__like-button" type="button"></button>
-                </div>
-            </article>
-            <article class="place">
-                <img class="place__image" src="./images/kazanskiy_kreml.jpeg" alt="Казанский Кремль">
-                <div class="place__info">
-                    <h2 class="place__title">Казанский Кремль</h2>
-                    <button class="place__like-button" type="button"></button>
-                </div>
-            </article>
-            <article class="place">
-                <img class="place__image" src="./images/dagestan.jpeg" alt="Дагестан">
-                <div class="place__info">
-                    <h2 class="place__title">Дагестан</h2>
-                    <button class="place__like-button" type="button"></button>
-                </div>
-            </article>
-        </section>
+        <section class="places"></section>
     </main>
     <footer class="footer">
         <p class="footer__info">&copy; 2022 Mesto Russia</p>
     </footer>
-    <section class="popup popup_opened">
+    <section class="popup popup-edit">
         <div class="popup__content">
             <button class="popup__close-button" type="button"></button>
             <div class="popup__container">
                 <h2 class="popup__heading">Редактировать профиль</h2>
-                <form class="popup__form" name="profile">
+                <form class="popup__form" id="profile">
                     <fieldset class="popup__input">
-                        <input class="popup__input-item" type="text" name="profilename" placeholder="Жак-Ив Кусто">
-                        <input class="popup__input-item" type="text" name="profileprofession"
-                            placeholder="Исследователь океана">
+                        <input class="popup__input-item popup__input-item_profile_name" type="text" name="profilename"
+                            placeholder="Жак-Ив Кусто">
+                        <input class="popup__input-item popup__input-item_profile_profission" type="text"
+                            name="profileprofession" placeholder="Исследователь океана">
                     </fieldset>
                     <button class="popup__save-button" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
     </section>
+    <section class="popup popup-add">
+        <div class="popup__content">
+            <button class="popup__close-button" type="button"></button>
+            <div class="popup__container">
+                <h2 class="popup__heading">Новое место</h2>
+                <form class="popup__form" id="place">
+                    <fieldset class="popup__input">
+                        <input class="popup__input-item popup__input-item_place_title" type="text" name="placetitle"
+                            placeholder="Название">
+                        <input class="popup__input-item popup__input-item_place_link" type="text" name="placelink"
+                            placeholder="Ссылка на картинку">
+                    </fieldset>
+                    <button class="popup__save-button" type="submit">Создать</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="popup popup-place">
+        <div class="popup__content">
+            <button class="popup__close-button" type="button"></button>
+            <img class="popup__place-image" src="" alt="">
+            <p class="popup__place-title"></p>
+        </div>
+    </section>
+    <template id="place-template">
+        <article class="place">
+            <button class="place__delete-button" type="button"></button>
+            <img class="place__image" src="" alt="">
+            <div class="place__info">
+                <h2 class="place__title"></h2>
+                <button class="place__like-button" type="button"></button>
+            </div>
+            </div>
+    </template>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>

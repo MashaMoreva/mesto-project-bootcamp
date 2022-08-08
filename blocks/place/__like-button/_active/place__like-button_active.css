@@ -1,0 +1,4 @@
+.place__like-button_active {
+    opacity: 1;
+    background-image: url(../../../../images/like_active.svg);
+}
