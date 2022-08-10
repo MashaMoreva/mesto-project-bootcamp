@@ -1,30 +1,3 @@
-const initialCards = [
-    {
-        name: 'гора Эльбрус',
-        link: 'https://35photo.pro/photos_main/1384/6922448.jpg'
-    },
-    {
-        name: 'Карелия',
-        link: 'https://35photo.pro/photos_main/1374/6870677.jpg'
-    },
-    {
-        name: 'Халактырский пляж, Камчатка',
-        link: 'https://35photo.pro/photos_main/1177/5889154.jpg'
-    },
-    {
-        name: 'Сулакский каньон, Дагестан',
-        link: 'https://35photo.pro/photos_main/1077/5387675.jpg'
-    },
-    {
-        name: 'Алтай',
-        link: 'https://35photo.pro/photos_main/1428/7141637.jpg'
-    },
-    {
-        name: 'Домбай',
-        link: 'https://35photo.pro/photos_main/768/3842757.jpg'
-    }
-];
-
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 const popupEdit = document.querySelector('.popup-edit');
@@ -40,11 +13,12 @@ const placeTitleInput = document.querySelector('.popup__input-item_place_title')
 const placeLinkInput = document.querySelector('.popup__input-item_place_link');
 const places = document.querySelector('.places');
 
-function addPlace(name, link) {
+function createPlace(name, link) {
     const placeTemplate = document.querySelector('#place-template').content;
     const placeElement = placeTemplate.querySelector('.place').cloneNode(true);
-    placeElement.querySelector('.place__image').src = link;
-    placeElement.querySelector('.place__image').alt = name;
+    const placeImage = placeElement.querySelector('.place__image');
+    placeImage.src = link;
+    placeImage.alt = name;
     placeElement.querySelector('.place__title').textContent = name;
     placeElement.querySelector('.place__like-button').addEventListener('click', function (evt) {
         evt.target.classList.toggle('place__like-button_active');
@@ -52,7 +26,7 @@ function addPlace(name, link) {
     placeElement.querySelector('.place__delete-button').addEventListener('click', function (evt) {
         (evt.target.closest('.place')).remove();
     });
-    placeElement.querySelector('.place__image').addEventListener('click', function (evt) {
+    placeImage.addEventListener('click', function (evt) {
         popupPlace.querySelector('img').src = evt.target.src;
         popupPlace.querySelector('.popup__place-title').textContent = evt.target.alt;
         openPopup(popupPlace);
@@ -63,7 +37,7 @@ function addPlace(name, link) {
 };
 
 initialCards.forEach(function (card) {
-    places.insertAdjacentElement('beforeend', addPlace(card.name, card.link))
+    places.insertAdjacentElement('beforeend', createPlace(card.name, card.link))
 });
 
 function closePopup(popup) {
@@ -91,7 +65,7 @@ function formProfileSubmit(evt) {
 
 function formPlaceSubmit(evt) {
     evt.preventDefault();
-    places.insertAdjacentElement('afterbegin', addPlace(placeTitleInput.value, placeLinkInput.value));
+    places.insertAdjacentElement('afterbegin', createPlace(placeTitleInput.value, placeLinkInput.value));
     closePopup(popupAdd);
 }
 

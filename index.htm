@@ -28,7 +28,7 @@
     <footer class="footer">
         <p class="footer__info">&copy; 2022 Mesto Russia</p>
     </footer>
-    <section class="popup popup-edit">
+    <div class="popup popup-edit">
         <div class="popup__content">
             <button class="popup__close-button" type="button"></button>
             <div class="popup__container">
@@ -44,8 +44,8 @@
                 </form>
             </div>
         </div>
-    </section>
-    <section class="popup popup-add">
+    </div>
+    <div class="popup popup-add">
         <div class="popup__content">
             <button class="popup__close-button" type="button"></button>
             <div class="popup__container">
@@ -61,14 +61,14 @@
                 </form>
             </div>
         </div>
-    </section>
-    <section class="popup popup-place">
+    </div>
+    <div class="popup popup-place">
         <div class="popup__content">
             <button class="popup__close-button" type="button"></button>
             <img class="popup__place-image" src="" alt="">
             <p class="popup__place-title"></p>
         </div>
-    </section>
+    </div>
     <template id="place-template">
         <article class="place">
             <button class="place__delete-button" type="button"></button>
@@ -77,8 +77,9 @@
                 <h2 class="place__title"></h2>
                 <button class="place__like-button" type="button"></button>
             </div>
-            </div>
+        </article>
     </template>
+    <script src="./scripts/data.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
