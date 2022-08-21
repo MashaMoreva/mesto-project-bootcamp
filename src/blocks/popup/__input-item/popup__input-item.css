@@ -1,5 +1,6 @@
 .popup__input-item {
     border: none;
+    min-width: 100%;
     padding: 0 0 13px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     font-weight: 400;
@@ -9,5 +10,5 @@
 }
 
 .popup__input-item:focus {
-    outline-color: gray ;
+    outline: none;
 }
