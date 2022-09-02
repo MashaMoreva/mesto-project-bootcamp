@@ -15,11 +15,14 @@
     </header>
     <main class="content">
         <section class="profile">
-            <img class="profile__avatar" src="<%=require('./images/avatar_mashamoreva.jpeg')%>" alt="аватар профиля">
+            <div class="profile__avatar-container">
+                <img class="profile__avatar" src="" alt="аватар профиля">
+                <button class="profile__avatar-edit-button"></button>
+            </div>
             <div class="profile__info">
-                <h1 class="profile__name">Маша Морева</h1>
+                <h1 class="profile__name"></h1>
                 <button class="profile__edit-button" type="button"></button>
-                <p class="profile__profession">студентка (фронтенд-разработчик)</p>
+                <p class="profile__profession"></p>
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
@@ -81,13 +84,34 @@
             <p class="popup__place-title"></p>
         </div>
     </div>
+    <div class="popup popup-avatar">
+        <div class="popup__content">
+            <button class="popup__close-button" type="button"></button>
+            <div class="popup__container">
+                <h2 class="popup__heading">Обновить аватар</h2>
+                <form class="popup__form" id="avatar" novalidate>
+                    <fieldset class="popup__input">
+                        <label for="avatar" class="popup__label">
+                            <input required class="popup__input-item popup__input-item_avatar" type="url" id="avatar"
+                                placeholder="Ссылка на аватар">
+                            <span class="popup__input-error-message" id="avatar-error"></span>
+                        </label>
+                    </fieldset>
+                    <button class="popup__save-button" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <template id="place-template">
         <article class="place">
             <button class="place__delete-button" type="button"></button>
             <img class="place__image" src="#" alt="">
             <div class="place__info">
                 <h2 class="place__title"></h2>
-                <button class="place__like-button" type="button"></button>
+                <div class="place__likes-container">
+                    <button class="place__like-button" type="button"></button>
+                    <span class="place__like-counter"></span>
+                </div>
             </div>
         </article>
     </template>

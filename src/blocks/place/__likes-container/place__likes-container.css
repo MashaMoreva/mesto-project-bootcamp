@@ -1,0 +1,4 @@
+.place__likes-container {
+    display: grid;
+    gap: 3px;
+}

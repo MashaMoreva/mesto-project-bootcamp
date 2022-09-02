@@ -24,3 +24,12 @@ export const initialCards = [
         link: 'https://35photo.pro/photos_main/768/3842757.jpg'
     }
 ];
+
+export const mestoSelectors = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input-item',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: 'popup__save-button_inactive',
+    inputErrorClass: 'popup__input-item_error',
+    errorClass: 'popup__input-error-message_active'
+};
