@@ -53,7 +53,7 @@ export function submitFormPlace(evt) {
     loadigPopup(true, popupAdd)
     addPlace(placeTitleInput.value, placeLinkInput.value)
         .then(function (result) {
-            places.prepend(createPlace(result.name, result.link))
+            places.prepend(createPlace(result))
         })
         .catch(handleError)
         .then(closePopup(popupAdd))
