@@ -1,14 +1,14 @@
 //инициализацию JS-кода, добавление слушателей и другие важные участки оставьте в файле
 import './pages/index.css';
 
-import { getProfileInfo, getInitialCards } from './components/api.js';
+import { getProfileInfo, getInitialCards, handleError } from './components/api.js';
 import { mestoSelectors } from './components/data.js';
 import { popupPlace, createPlace } from './components/card.js';
 import { closePopup, openPopup } from './components/utils.js';
 import { revalidateForm, enableValidation } from './components/validate.js';
 import {
   nameInput, professionInput,
-  profileName, profileProfession,
+  profileName, profileProfession, profileAvatar,
   places, placeTitleInput, placeLinkInput,
   avatarInput, submitFormAvatar,
   popupEdit, popupAdd,
@@ -16,7 +16,6 @@ import {
   closePopupOnOverlayClick,
   popupAvatar
 } from './components/modal.js';
-import { getProfileInfo, getInitialCards } from './components/api.js';
 
 export let userId;
 
@@ -30,7 +29,6 @@ const buttonClosePopupEdit = popupEdit.querySelector('.popup__close-button');
 const buttonClosePopupAdd = popupAdd.querySelector('.popup__close-button');
 const buttonClosePopupPlace = popupPlace.querySelector('.popup__close-button');
 const buttonClosePopupAvatar = popupAvatar.querySelector('.popup__close-button');
-const profileAvatar = document.querySelector('.profile__avatar');
 
 getProfileInfo()
   .then(function (result) {
@@ -47,6 +45,7 @@ getInitialCards()
     result.forEach(function (card) {
       places.append(createPlace(card))
     })
+    console.log(result)
   })
   .catch(handleError);
 

@@ -1,6 +1,6 @@
 //функции для работы с карточками проекта Mesto
 import { openPopup } from "./utils.js";
-import { likeCard, dislikeCard, deletePlace } from "./api.js";
+import { likeCard, dislikeCard, deletePlace, handleError } from "./api.js";
 import { userId } from "../index.js";
 
 export const popupPlace = document.querySelector('.popup-place');
