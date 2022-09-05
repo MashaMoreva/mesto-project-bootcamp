@@ -1,7 +1,7 @@
 //работа модальных окон
 //import { profileName, profileProfession, nameInput, professionInput } from ".index.js";
 import { closePopup } from "./utils.js";
-import { addPlace, editProfile, editAvatar } from "./index.js";
+import { addPlace, editProfile, editAvatar } from "./api.js";
 
 export const profileName = document.querySelector('.profile__name');
 export const profileProfession = document.querySelector('.profile__profession');
