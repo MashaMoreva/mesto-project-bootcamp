@@ -75,13 +75,10 @@ export function handleDeletePlace(evt) {
     return deletePlace(deletedPlace.id)
         .then(function () {
             deletedPlace.remove();
-        })
-        .catch(handleError)
-        .then(closePopup(popupDelete))
-        .catch(handleError)
-        .then (function () {
+            closePopup(popupDelete);
             deletedPlace = null;
         })
+        .catch(handleError)
         .finally(function () {
             loadigPopupDelete(false, popupDelete)
         })
