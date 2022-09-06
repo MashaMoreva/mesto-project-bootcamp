@@ -1,5 +1,5 @@
 //утилитарные функции, которые используются в работе сразу нескольких других функций
-import { closePopupOnEsc } from "./modal.js";
+import { closePopupOnEsc } from "./constants.js";
 
 export function closePopup(popup) {
     popup.classList.remove('popup_opened');

@@ -3,7 +3,7 @@ import './pages/index.css';
 
 import { getProfileInfo, getInitialCards, handleError } from './components/api.js';
 import { mestoSelectors } from './components/data.js';
-import { popupPlace, createPlace } from './components/card.js';
+import { createPlace, handleDeletePlace } from './components/card.js';
 import { closePopup, openPopup } from './components/utils.js';
 import { revalidateForm, enableValidation } from './components/validate.js';
 import {
@@ -13,7 +13,6 @@ import {
   avatarInput, submitFormAvatar,
   popupEdit, popupAdd,
   submitFormProfile, submitFormPlace,
-  closePopupOnOverlayClick,
   popupAvatar
 } from './components/modal.js';
 
@@ -25,58 +24,39 @@ const buttonEditProfile = document.querySelector('.profile__avatar-edit-button')
 const formProfile = document.querySelector('#profile');
 const formPlace = document.querySelector('#place');
 const formAvatar = document.querySelector('#avatar');
-const buttonClosePopupEdit = popupEdit.querySelector('.popup__close-button');
-const buttonClosePopupAdd = popupAdd.querySelector('.popup__close-button');
-const buttonClosePopupPlace = popupPlace.querySelector('.popup__close-button');
-const buttonClosePopupAvatar = popupAvatar.querySelector('.popup__close-button');
+const formDelete = document.querySelector('#delete');
+const popups = document.querySelectorAll('.popup')
 
-getProfileInfo()
-  .then(function (result) {
-    profileName.textContent = result.name;
-    profileProfession.textContent = result.about;
-    profileAvatar.src = result.avatar;
-    userId = result._id;
-    console.log(result)
+popups.forEach(function (popup) {
+  popup.addEventListener('mousedown', function (evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup)
+    }
+    if (evt.target.classList.contains('popup__close-button')) {
+      closePopup(popup)
+    }
   })
-  .catch(handleError);
+})
 
-getInitialCards()
-  .then(function (result) {
-    result.forEach(function (card) {
+Promise.all([getProfileInfo(), getInitialCards()])
+  // деструктурирую ответ от сервера, чтобы было понятнее, что пришло
+  .then(function ([profileInfo, cards]) {
+    profileName.textContent = profileInfo.name;
+    profileProfession.textContent = profileInfo.about;
+    profileAvatar.src = profileInfo.avatar;
+    userId = profileInfo._id;
+    cards.forEach(function (card) {
       places.append(createPlace(card))
     })
-    console.log(result)
+    console.log(profileInfo)
+    console.log(cards)
   })
   .catch(handleError);
-
-
-//initialCards.forEach(function (card) {
-//  places.prepend(createPlace(card.name, card.link))
-//});
-
-buttonClosePopupEdit.addEventListener('click', function () {
-  closePopup(popupEdit);
-});
-buttonClosePopupAdd.addEventListener('click', function () {
-  closePopup(popupAdd)
-});
-buttonClosePopupPlace.addEventListener('click', function () {
-  closePopup(popupPlace)
-});
-buttonClosePopupAvatar.addEventListener('click', function () {
-  closePopup(popupAvatar)
-});
-
 
 formProfile.addEventListener('submit', submitFormProfile);
 formPlace.addEventListener('submit', submitFormPlace);
 formAvatar.addEventListener('submit', submitFormAvatar);
-
-popupEdit.addEventListener('click', closePopupOnOverlayClick);
-popupAdd.addEventListener('click', closePopupOnOverlayClick);
-popupPlace.addEventListener('click', closePopupOnOverlayClick);
-popupAvatar.addEventListener('click', closePopupOnOverlayClick);
-
+formDelete.addEventListener('submit', handleDeletePlace);
 
 editButton.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
